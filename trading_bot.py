@@ -323,7 +323,7 @@ class SymbolBot:
         if signal == "buy" and not self.account.in_position:
             self.account.buy(current_price, self.cfg.trade_fraction, self.cfg.fee_pct)
             self._append_csv(self.account.trade_history[-1])
-            msg = f"[{self.symbol}] COMPRA a {current_price:.4f}"
+msg = f"[{self.symbol}] COMPRA a {current_price:.4f}"
             self.log.info(f"[BUY] {msg}")
             self.telegram.send(f"🟢 {msg}")
 
@@ -387,6 +387,8 @@ class SymbolBot:
             except Exception as e:
                 self.log.error(f"[{self.symbol}] Error en el ciclo: {e}")
             time.sleep(self.cfg.poll_seconds)
+
+
 # ------------------------------------------------------------------
 # PANEL WEB (Flask) -- estilo cyberpunk, graficas en vivo con Chart.js
 # ------------------------------------------------------------------
