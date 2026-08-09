@@ -341,7 +341,6 @@ class SymbolBot:
 
         self.shared_state.update(
             self.symbol,
-            symbol=self.symbol,
             current_price=round(float(current_price), 6),
             in_position=self.account.in_position,
             entry_price=round(self.account.entry_price, 6),
